@@ -47,7 +47,7 @@ public class ContextService {
     private int pubCounter = 0;
     
     public ContextService() {
-        sense = new SenseService("ec2.hallnet.eu", 1337, SenseService.INTERVAL_FAST, true);
+        sense = new SenseService("ec2.hallnet.eu", 1337, SenseService.INTERVAL_SLOW, true);
         
         sense.subscribe("name:PlaySomeMusic", new PlayMusicCommandListener());
         sense.subscribe("name:PhoneLocation", new PhoneLocationListener());
