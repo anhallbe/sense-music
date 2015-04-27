@@ -27,7 +27,7 @@ import sense.jsense.util.UpdateListener;
  *
  * @author andreas
  */
-public class ContextService {
+public class MusicContextService {
     
     private final String WIFI_DISCONNECTED = "disconnected";
     private final String WIFI_HOME = "HALLNET_5";
@@ -46,7 +46,7 @@ public class ContextService {
     
     private int pubCounter = 0;
     
-    public ContextService() {
+    public MusicContextService() {
         sense = new SenseService("ec2.hallnet.eu", 1337, SenseService.INTERVAL_SLOW, true);
         
         sense.subscribe("name:PlaySomeMusic", new PlayMusicCommandListener());
@@ -116,7 +116,7 @@ public class ContextService {
     }
     
     public static void main(String[] args) {
-        ContextService service = new ContextService();
+        MusicContextService service = new MusicContextService();
         try {
             Object lock = new Object();
             synchronized (lock) {
