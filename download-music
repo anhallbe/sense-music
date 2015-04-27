@@ -1,0 +1,23 @@
+#!/bin/bash
+cd SenseMusicPlayer/
+mkdir music
+cd music
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/0.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/1.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/2.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/3.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/4.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/5.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/6.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/7.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/8.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/9.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/10.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/11.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/12.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/13.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/14.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/15.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/16.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/17.wav
+wget https://s3.eu-central-1.amazonaws.com/storage.hallnet/sense-music/18.wav
