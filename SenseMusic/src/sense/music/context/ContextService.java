@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package sensemusic;
+package sense.music.context;
 
 import java.util.Date;
 import java.util.logging.Level;
@@ -27,7 +27,7 @@ import sense.jsense.util.UpdateListener;
  *
  * @author andreas
  */
-public class SenseMusic {
+public class ContextService {
     
     private final String WIFI_DISCONNECTED = "disconnected";
     private final String WIFI_HOME = "HALLNET_5";
@@ -46,8 +46,8 @@ public class SenseMusic {
     
     private int pubCounter = 0;
     
-    public SenseMusic() {
-        sense = new SenseService("ec2.hallnet.eu", 1337, SenseService.INTERVAL_SLOW, true);
+    public ContextService() {
+        sense = new SenseService("ec2.hallnet.eu", 1337, SenseService.INTERVAL_FAST, true);
         
         sense.subscribe("name:PlaySomeMusic", new PlayMusicCommandListener());
         sense.subscribe("name:PhoneLocation", new PhoneLocationListener());
@@ -116,7 +116,7 @@ public class SenseMusic {
     }
     
     public static void main(String[] args) {
-        SenseMusic service = new SenseMusic();
+        ContextService service = new ContextService();
         try {
             Object lock = new Object();
             synchronized (lock) {
