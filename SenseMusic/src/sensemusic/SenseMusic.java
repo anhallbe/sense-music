@@ -39,8 +39,8 @@ public class SenseMusic {
     private Date timeOfWifiConnect = new Date();
     private Date timeOfWifiDisconnect = new Date();
     
-    private GeoLoc home = new GeoLoc(59.40365215, 17.94339358);
-    private GeoLoc electrum = new GeoLoc(59.404694, 17.949911);
+    private final GeoLoc home = new GeoLoc(59.40365215, 17.94339358);
+    private final GeoLoc electrum = new GeoLoc(59.404694, 17.949911);
     private GeoLoc userLocation;
     private String wifiSSID = WIFI_DISCONNECTED;
     
@@ -62,11 +62,14 @@ public class SenseMusic {
             System.out.println("Value: " + sp.getValue());
             
             if(userLocation != null) {
-                if(userLocation.distanceTo(home) < 100) {
+                System.out.println("Distance home: " + userLocation.distanceTo(home));
+                System.out.println("Distance electrum: " + userLocation.distanceTo(electrum));
+                
+                if(userLocation.distanceTo(home) < 100 || wifiSSID.equals(WIFI_HOME)) {
                     System.out.println("I'm at home, probably want to play music on PC.");
                     sense.publish(new SenseMusicContext("I'm at home, probably want to play music on PC."));
                 }
-                if(userLocation.distanceTo(electrum) < 100) {
+                else if(userLocation.distanceTo(electrum) < 100 || wifiSSID.equals(WIFI_EDUROAM)){
                     System.out.println("I'm in Electrum, laptop is a good candidate.");
                     sense.publish(new SenseMusicContext("I'm in Electrum, laptop is a good candidate."));
                 }
