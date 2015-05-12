@@ -73,11 +73,14 @@ public class SenseMusicPlayer {
             
             try {
                 AudioInputStream audioStream = AudioSystem.getAudioInputStream(trackFile);
-                if(clip.isOpen())
+                if(clip.isOpen()) {
                     clip.close();
-                clip.stop();
-                clip.open(audioStream);
-                clip.start();
+                    clip.stop();
+                }
+                else {
+                    clip.open(audioStream);
+                    clip.start();
+                }
             } catch (UnsupportedAudioFileException ex) {
                 Logger.getLogger(SenseMusicPlayer.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
