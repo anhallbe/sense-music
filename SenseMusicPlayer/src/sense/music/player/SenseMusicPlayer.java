@@ -21,17 +21,18 @@ import sense.jsense.util.SensorPub;
 import sense.jsense.util.UpdateListener;
 
 /**
- *
+ * This is a very light-weight service that should run on my laptop/PC/phone.
+ * It will simply listen for commands/events that tells it to start playing some music...
  * @author andreas
  */
 public class SenseMusicPlayer {
     
-    private SenseService sense;
-    private Clip clip;
+    private SenseService sense;     //Service used for subscription
+    private Clip clip;              //Audio clip
     
-    public static final String CTX_LAPTOP = "laptop";
-    public static final String CTX_PC = "pc";
-    public static final String CTX_PHONE = "phone";
+    public static final String CTX_LAPTOP = "laptop";   //Used if application is executing on laptop.
+    public static final String CTX_PC = "pc";           //Used if application is executing on pc.
+    public static final String CTX_PHONE = "phone";     //Used if application is executing on phone.
     
     
     public SenseMusicPlayer(String context) {
@@ -88,7 +89,7 @@ public class SenseMusicPlayer {
     }
 
     public static void main(String[] args) {
-        SenseMusicPlayer player = new SenseMusicPlayer(SenseMusicPlayer.CTX_PC);
+        SenseMusicPlayer player = new SenseMusicPlayer(SenseMusicPlayer.CTX_LAPTOP);
         try {
             Object lock = new Object();
             synchronized (lock) {
